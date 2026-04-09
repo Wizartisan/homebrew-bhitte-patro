@@ -9,5 +9,8 @@ cask "bhitte-patro" do
 
   depends_on macos: ">= :ventura"
 
+  # Bypass Gatekeeper quarantine for unsigned app
+  quarantine false
+
   app "BhittePatro.app"
 end
