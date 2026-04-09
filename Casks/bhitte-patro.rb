@@ -9,6 +9,8 @@ cask "bhitte-patro" do
 
   depends_on macos: ">= :ventura"
 
+  container nested: "BhittePatro-#{version}.dmg"
+
   app "BhittePatro.app"
 
   # Strip quarantine attribute to bypass Gatekeeper
