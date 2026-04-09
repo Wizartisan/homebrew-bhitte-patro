@@ -9,8 +9,10 @@ cask "bhitte-patro" do
 
   depends_on macos: ">= :ventura"
 
-  # Bypass Gatekeeper quarantine for unsigned app
-  quarantine false
-
   app "BhittePatro.app"
+
+  # Strip quarantine attribute to bypass Gatekeeper
+  postflight do
+    system_command "xattr", args: ["-dr", "com.apple.quarantine", staged_path]
+  end
 end
